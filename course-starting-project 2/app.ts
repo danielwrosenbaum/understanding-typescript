@@ -1,36 +1,15 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string]; // tuple //
-// } = {
-//   name: 'Daniel',
-//   age: 35,
-//   hobbies: ['Hiking', 'Reading'],
-//   role: [2, 'author'] // tuple = fixed array: role must have two indexes with a number followed by a string //
-// };
-// const ADMIN = 0;
-// const  READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200};
-
-const person = {
-  name: 'Daniel',
-  age: 35,
-  hobbies: ['Hiking', 'Reading'],
-  role: Role.ADMIN
-};
-
-let favoriteActivites: string[];
-favoriteActivites = ['Sports'];
-
-console.log(person.name)
-
-for (const hobby of person.hobbies) {
-  console.log(hobby)
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+     result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+    return result;
 }
 
-if (person.role === Role.ADMIN) {
-  console.log('is admin');
-}
+const combinedAges = combine(30, 26);
+console.log(combinedAges)
+
+const combinedNames = combine('Max', 'Anna')
+console.log(combinedNames)
